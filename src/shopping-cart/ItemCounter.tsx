@@ -20,18 +20,6 @@ export const ItemCounter = ({ name, quantity = 1 }: Props) => {
     setCount(count - 1)
   }
 
-  // const myStyles: CSSProperties = {
-  //   display: 'flex',
-  //   alignItems: 'center',
-  //   gap: 10,
-  //   marginTop: 10
-  // }
-
-  // const myStyleSpan: CSSProperties = {
-  //   width: 150,
-  //   color: count === 1 ? 'red' : 'black'
-  // }
-
   return (
     <>
       <section className={styles['item-row']}>

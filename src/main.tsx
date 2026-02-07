@@ -1,12 +1,9 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-// import { MyAwesomeApp } from "./MyAwesomeApp";
-// import { FirstStepsApp } from './FirstStepsApp';
-import { MyAwesomeApp2 } from './MyAwesomeApp2';
+import { FirstStepsApp } from './FirstStepsApp';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    {/* <FirstStepsApp /> */}
-    <MyAwesomeApp2 />
+    <FirstStepsApp />
   </StrictMode>,
 )
