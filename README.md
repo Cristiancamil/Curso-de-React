@@ -1,5 +1,50 @@
 # React + TypeScript + Vite
 
+Proyecto de práctica enfocado en el desarrollo de componentes en React usando TypeScript, 
+documentación profesional con JSDoc y pruebas unitarias.
+
+---
+
+## Tecnologías utilizadas
+
+- React  
+- TypeScript  
+- Vite  
+- Vitest  
+- React Testing Library  
+- ESLint
+
+---
+
+## Componente principal: MyAwesomeApp
+Componente funcional de React que renderiza información personal, preferencias del usuario y su estado de actividad.
+
+### ¿Qué es este componente?
+MyAwesomeApp es un componente que muestra datos estáticos definidos dentro del módulo, incluyendo:
+1. Nombre y apellido
+2. Juegos favoritos
+3. Estado de actividad
+4. Dirección en formato JSON
+5. Estilos aplicados en línea
+
+---
+
+## Documentación con JSDoc
+Este componente está documentado usando JSDoc, lo que permite que otros desarrolladores entiendan rápidamente su propósito.
+
+| Etiqueta | Función |
+|---------|---------|
+| `@component` | Indica que la función es un componente React |
+| `@returns {JSX.Element}` | Define que retorna elementos JSX renderizados en pantalla |
+| `@example` | Muestra cómo se usa el componente |
+| `@see` | Referencia variables relacionadas utilizadas por el componente |
+
+---
+
+## Ejemplo de uso
+```jsx
+<MyAwesomeApp />
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
