@@ -16,6 +16,24 @@ documentación profesional con JSDoc y pruebas unitarias.
 
 ---
 
+## Configuración del proyecto
+Este proyecto usa Vite como bundler y entorno de desarrollo.
+
+### Ejecutar en local
+
+```bash
+npm install
+npm run dev
+```
+
+### Ejecutar pruebas
+
+```bash
+npm run test
+```
+
+---
+
 ## Componente principal: MyAwesomeApp
 Componente funcional de React que renderiza información personal, preferencias del usuario y su estado de actividad.
 
@@ -30,7 +48,7 @@ MyAwesomeApp es un componente que muestra datos estáticos definidos dentro del 
 ---
 
 ## Documentación con JSDoc
-Este componente está documentado usando JSDoc, lo que permite que otros desarrolladores entiendan rápidamente su propósito.
+El componente está documentado con JSDoc, lo que facilita el mantenimiento y la comprensión del código.
 
 | Etiqueta | Función |
 |---------|---------|
@@ -44,56 +62,37 @@ Este componente está documentado usando JSDoc, lo que permite que otros desarro
 ## Ejemplo de uso
 ```jsx
 <MyAwesomeApp />
+```
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## Pruebas unitarias
+Se implementan pruebas con Vitest y React Testing Library para validar que el componente se renderiza correctamente.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Validaciones realizadas
+- Que el nombre se muestre en el <h1>
+- Que el apellido se muestre en el <h3>
 
-## Expanding the ESLint configuration
+Ejemplo de test:
+```jsx
+test('should render firstName and lastName', () => {
+  const { container } = render(<MyAwesomeApp />)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+  const h1 = container.querySelector('h1')
+  const h3 = container.querySelector('h3')
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
+  expect(h1?.innerHTML).toContain('Cristian')
+  expect(h3?.innerHTML).toContain('Lopez')
 })
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Conclusión
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Este proyecto sirve como base para aprender:
+
+- Arquitectura básica en React  
+- Documentación técnica correcta  
+- Testing de componentes  
+- Buenas prácticas de desarrollo frontend  
