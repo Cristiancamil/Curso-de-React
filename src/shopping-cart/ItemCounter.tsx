@@ -53,6 +53,7 @@ export const ItemCounter = ({ name, quantity = 1 }: ItemCounterProps) => {
    * Evita que el valor sea menor a 1.
    */
   const handleSubtract = () => {
+    console.log('Hola mundo -1');
     if (count === 1) return
     setCount(count - 1)
   }
